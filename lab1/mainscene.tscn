@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://rw3dg844jabq"]
+
+[ext_resource type="Texture2D" uid="uid://vxdj7mke8cnm" path="res://pngimg.com - fox_PNG23161.png" id="1_p78tt"]
+[ext_resource type="Texture2D" uid="uid://g71gb2ryfu2e" path="res://green-spruce-tree-isolated-png.webp" id="2_vg1vw"]
+[ext_resource type="Texture2D" uid="uid://djq8rcb5iw4ck" path="res://pngimg.com - birds_PNG46.png" id="3_8srm5"]
+
+[node name="Fox" type="Sprite2D"]
+position = Vector2(852, 2076)
+scale = Vector2(0.74, 0.715909)
+texture = ExtResource("1_p78tt")
+
+[node name="Tree" type="Sprite2D" parent="."]
+position = Vector2(68.9189, -940.064)
+scale = Vector2(2.97973, 3.78571)
+texture = ExtResource("2_vg1vw")
+
+[node name="Tree" type="Sprite2D" parent="Tree"]
+position = Vector2(196.825, -0.36895)
+scale = Vector2(1.02043, 1.02391)
+texture = ExtResource("2_vg1vw")
+
+[node name="Tree2" type="Sprite2D" parent="Tree"]
+position = Vector2(960.544, 10.3312)
+scale = Vector2(0.991531, 0.903996)
+texture = ExtResource("2_vg1vw")
+
+[node name="Tree" type="Sprite2D" parent="Tree/Tree2"]
+position = Vector2(217.717, -5.71445)
+scale = Vector2(1.02043, 1.02391)
+texture = ExtResource("2_vg1vw")
+
+[node name="Birds" type="Sprite2D" parent="."]
+position = Vector2(1863.51, -1482.03)
+scale = Vector2(1.71569, 1.60633)
+texture = ExtResource("3_8srm5")
