@@ -1,12 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://rw3dg844jabq"]
+[gd_scene load_steps=8 format=3 uid="uid://rw3dg844jabq"]
 
 [ext_resource type="Texture2D" uid="uid://vxdj7mke8cnm" path="res://pngimg.com - fox_PNG23161.png" id="1_p78tt"]
 [ext_resource type="Texture2D" uid="uid://g71gb2ryfu2e" path="res://green-spruce-tree-isolated-png.webp" id="2_vg1vw"]
 [ext_resource type="Texture2D" uid="uid://djq8rcb5iw4ck" path="res://pngimg.com - birds_PNG46.png" id="3_8srm5"]
+[ext_resource type="Texture2D" uid="uid://dg8ie2dq21s07" path="res://Rocks-Transparent-Background.png" id="4_qse12"]
+[ext_resource type="Texture2D" uid="uid://fjbcvwrkld87" path="res://purepng.com-stones-and-rocksstonerockmineralmaterialbuilding-1411527101961upyqh.png" id="5_cax4p"]
+[ext_resource type="Script" path="res://character_body_2d.gd" id="7_hs8o2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tbtso"]
+radius = 162.415
 
 [node name="Fox" type="Sprite2D"]
-position = Vector2(852, 2076)
-scale = Vector2(0.74, 0.715909)
+position = Vector2(76, 451)
+scale = Vector2(0.283333, 0.223485)
 texture = ExtResource("1_p78tt")
 
 [node name="Tree" type="Sprite2D" parent="."]
@@ -33,3 +39,52 @@ texture = ExtResource("2_vg1vw")
 position = Vector2(1863.51, -1482.03)
 scale = Vector2(1.71569, 1.60633)
 texture = ExtResource("3_8srm5")
+
+[node name="Rocks-transparent-background" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(114.865, -2348.06)
+scale = Vector2(2.412, 2.32358)
+texture = ExtResource("4_qse12")
+
+[node name="Rocks" type="Sprite2D" parent="."]
+position = Vector2(1283.78, -470.73)
+scale = Vector2(0.605105, 0.585485)
+texture = ExtResource("5_cax4p")
+
+[node name="Rocks" type="Sprite2D" parent="Rocks"]
+position = Vector2(620.844, -73.9586)
+scale = Vector2(0.605105, 0.585485)
+texture = ExtResource("5_cax4p")
+
+[node name="Rocks" type="Sprite2D" parent="Rocks/Rocks"]
+position = Vector2(-84.8857, 493.056)
+scale = Vector2(0.605105, 0.585485)
+texture = ExtResource("5_cax4p")
+
+[node name="Rocks2" type="Sprite2D" parent="Rocks"]
+position = Vector2(1208.19, -2.38566)
+scale = Vector2(0.937624, 0.943187)
+texture = ExtResource("5_cax4p")
+
+[node name="Rocks" type="Sprite2D" parent="Rocks/Rocks2"]
+position = Vector2(531.146, 75.8841)
+scale = Vector2(0.605105, 0.585485)
+texture = ExtResource("5_cax4p")
+
+[node name="Rocks" type="Sprite2D" parent="Rocks/Rocks2/Rocks"]
+position = Vector2(-98.1249, -507.029)
+scale = Vector2(0.605105, 0.585485)
+texture = ExtResource("5_cax4p")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(600, 626.441)
+script = ExtResource("7_hs8o2")
+
+[node name="Pngimg_com-FoxPng23161" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(3.05176e-05, -17.8983)
+scale = Vector2(0.447059, 0.491526)
+texture = ExtResource("1_p78tt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-10.5883, -13.4237)
+shape = SubResource("CircleShape2D_tbtso")
