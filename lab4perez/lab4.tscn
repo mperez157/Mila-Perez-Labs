@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://qmbiog61dv3r"]
+
+[ext_resource type="Script" path="res://character_body_3d.gd" id="1_spqv2"]
+
+[sub_resource type="Gradient" id="Gradient_dilne"]
+offsets = PackedFloat32Array(0.574627, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kqicx"]
+gradient = SubResource("Gradient_dilne")
+fill_to = Vector2(0.75, 0.388889)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uh4a4"]
+metallic = 1.0
+metallic_texture = SubResource("GradientTexture2D_kqicx")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4t4g2"]
+size = Vector3(4.06879, 2.34741, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 3, 5)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -0.627882, 0.778309, 0, -0.778309, -0.627882, -0.314802, -0.00364304, -0.281106)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.067709, 1.66406, 12.7755)
+size = Vector3(4.18799, 2.32812, 1)
+material = SubResource("StandardMaterial3D_uh4a4")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.62575, 0, 0)
+script = ExtResource("1_spqv2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0149841, 0.0201416, 0)
+shape = SubResource("BoxShape3D_4t4g2")
